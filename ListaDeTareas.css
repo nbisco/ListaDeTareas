@@ -1,6 +1,39 @@
+header h1 span {
+	font-size: 0.8em;
+	color: #888;
+}
+header form input {
+	margin-bottom: 10px;
+	width: 35%;
+	float: left;
+}
+.ocultarRealizadas {
+	float: right;
+}
+section {
+	clear: both;
+}
 ul {
 	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
-.marcada {
-	color: #bbb;
+ul li {
+	background-color: #8ed055;
+	padding: 15px;
+	margin-bottom: 3px;
+}
+ul li button {
+	float: right;
+	color: black;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	font-size: 1.3em;
+	cursor: pointer;
+}
+
+.realizada {
+	color: #666;
 }

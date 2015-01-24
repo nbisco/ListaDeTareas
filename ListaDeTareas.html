@@ -10,6 +10,11 @@
   	  	  	<form id="agregarTarea">
   	  	  		<input id="nuevaTarea" type="text" name="texto" placeholder="Ingrese una nueva tarea...">
   	  	  	</form>
+
+  	  	  	<label class="ocultarRealizadas">
+  	  	  		<input type="checkbox" name="ocultar">
+  	  	  		Ocultar tareas realizadas
+  	  	  	</label>
   	  	</header>
   	<section>	
   	  	<ul>
@@ -22,9 +27,15 @@
 </body>
 
 <template name="tarea">
-	<li class="{{#if marcada}}marcada{{/if}}">
-		<input type="checkbox">
-		<button class="borrar">&times;</button>
-		<span>{{texto}}</span>
+	<li class="{{#if realizada}}realizada{{/if}}">
+		<form>
+			<input type="checkbox" checked="{{realizada}}">
+			<button class="borrar">&times;</button>
+			{{#if enEdicion this._id}}
+				<input type="text" name="texto">
+			{{else}}	
+				<label id="{{this._id}}" class="editar">{{texto}}</label>
+			{{/if}}	
+		</form>
 	</li>
 </template>
