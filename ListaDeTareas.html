@@ -1,0 +1,30 @@
+<head>
+  <title>ListaDeTareas</title>
+</head>
+
+<body>
+  	<div class="contenedor">
+  		<header>
+  	  		<h1>Tareas <span> {{tareasIncompletas}} tareas incompletas</span> </h1>
+  	  	
+  	  	  	<form id="agregarTarea">
+  	  	  		<input id="nuevaTarea" type="text" name="texto" placeholder="Ingrese una nueva tarea...">
+  	  	  	</form>
+  	  	</header>
+  	<section>	
+  	  	<ul>
+  	  		{{#each tareas}}
+  	  			{{> tarea}}
+  	  		{{/each}}
+  	  	</ul>
+  	</section>
+  	</div>
+</body>
+
+<template name="tarea">
+	<li class="{{#if marcada}}marcada{{/if}}">
+		<input type="checkbox">
+		<button class="borrar">&times;</button>
+		<span>{{texto}}</span>
+	</li>
+</template>
