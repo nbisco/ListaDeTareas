@@ -28,14 +28,16 @@
 
 <template name="tarea">
 	<li class="{{#if realizada}}realizada{{/if}}">
-		<form>
-			<input type="checkbox" checked="{{realizada}}">
-			<button class="borrar">&times;</button>
+		<input id="tachar" type="checkbox" checked="{{realizada}}">
+  
+    <form id="actualizar">
 			{{#if enEdicion this._id}}
-				<input type="text" name="texto">
-			{{else}}	
-				<label id="{{this._id}}" class="editar">{{texto}}</label>
+        <input type="text" name="textoActual">
+      {{else}}	
+				<label class="editar" campo="texto">{{texto}}</label>
 			{{/if}}	
 		</form>
-	</li>
+  
+    <button class="borrar">&times;</button>
+  </li>
 </template>

@@ -20,8 +20,15 @@ ul {
 }
 ul li {
 	background-color: #8ed055;
-	padding: 15px;
+	padding: 33px;
 	margin-bottom: 3px;
+	clear: both;
+}
+ul li #tachar {
+	float: left;
+}
+ul li form {
+	float: left;
 }
 ul li button {
 	float: right;

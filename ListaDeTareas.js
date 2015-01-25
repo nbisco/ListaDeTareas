@@ -38,11 +38,17 @@ if (Meteor.isClient) {
     "click .borrar": function () {
       Tareas.remove(this._id);
     },
-    "change li input": function () {
+    "click #tachar": function () {
       Tareas.update(this._id, {$set: {realizada: !this.realizada}});
     },
     "click .editar": function (e) {
-      Session.set('editando', e.target.id);
+      Session.set('editando', this._id);
+      Session.set('campo', e.target.getAttribute('campo'));
+    },
+    "submit #actualizar": function(e) {
+      Tareas.update(this._id, {$set: {texto: e.target.textoActual.value}});
+      Session.set('editando', false);
+      return false;
     }
   });
 }
